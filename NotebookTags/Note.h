@@ -6,6 +6,7 @@
 
 class Note
 {
+private:
 	std::string path; 
 public:
 	static bool CreateNote(std::string path = "-1");

@@ -59,8 +59,20 @@ namespace NotebookTags {
 	private: System::Windows::Forms::Label^ TagBox;
 	private: System::Windows::Forms::TextBox^ TagText;
 	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
+
+
+
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::ListBox^ NotesWithTag;
+
+
+
+
+
+
+
+
+
 	private: System::ComponentModel::IContainer^ components;
 
 	private:

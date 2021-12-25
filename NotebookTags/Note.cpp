@@ -4,6 +4,8 @@ const std::string dir = "..\\Notes\\", prefix = "Note", extension = ".txt";
 
 bool Note::CreateNote(std::string path)
 {
+	std::string dir = "..\\Notes\\", prefix = "Note", extension = ".txt";
+
 	int i = NumberFiles(dir, prefix, extension);
 
 	try
@@ -19,7 +21,8 @@ bool Note::CreateNote(std::string path)
 	{
 		return false;
 	}
-
+	return true;
+	
 	return true;
 }
 
@@ -46,7 +49,7 @@ int NumberFiles(std::string dir, std::string prefix, std::string extension)
 {
 	int returnedCount = 0;
 	int possibleMax = 9999999;
-	
+
 	for (int istarter = 1; istarter < possibleMax; istarter++) {
 		std::string fileName = "";
 		fileName.append(dir + prefix + std::to_string(istarter) + extension);
@@ -57,16 +60,22 @@ int NumberFiles(std::string dir, std::string prefix, std::string extension)
 		if (!status)
 		{
 			break;
-		}
+	}
 	}
 	return returnedCount;
 }
 
 std::ofstream Note::OpenNoteForWrite(std::string path)
 {
-	std::ofstream note;
+	try
+	{
+		std::ofstream note;
 	note.open(dir + path, std::ios::out | std::ios::trunc); //Open with clearing prev. info
-	return note;
+		return note;
+	}
+	catch (std::exception)
+	{
+	}
 }
 
 std::string toStandardString(System::String^ string)

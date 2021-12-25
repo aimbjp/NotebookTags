@@ -11,6 +11,7 @@ void main()
 
 	NotebookTags::MyForm form;
 	Application::Run(% form);
+	
 }
 
 void NotebookTags::MyForm::RefreshListNotes()
@@ -20,6 +21,7 @@ void NotebookTags::MyForm::RefreshListNotes()
 	for (int i = 0; i < files->Length; i++) {
 		this->ListNotes->Items->Add(Path::GetFileName(files[i]));
 	}
+
 }
 
 void NotebookTags::MyForm::RefreshTagText()
@@ -143,6 +145,7 @@ System::Void NotebookTags::MyForm::SaveNote_Click(System::Object^ sender, System
 	else
 	{
 		this->NoteBox->Text = "Choose note from list.";
+
 	}
 }
 
